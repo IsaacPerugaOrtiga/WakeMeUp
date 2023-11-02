@@ -1,32 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline90"
+        android:layout_width="177dp"
+        android:layout_height="231dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline80"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="720dp">
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.8"/>
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/faButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline40"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="0dp">
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </LinearLayout>
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.4"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline60"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.6"/>
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="401dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guideline90"
+        app:menu="@menu/bottom_nav" />
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/faButton"
+        android:layout_width="307dp"
+        android:layout_height="59dp"
+        android:contentDescription="Add Alarm"
+        app:layout_constraintTop_toBottomOf="@id/guideline80"
+        app:layout_constraintBottom_toTopOf="@id/guideline90"
+        app:layout_constraintLeft_toLeftOf="@id/guideline40"
+        app:layout_constraintRight_toRightOf="@id/guideline60" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvHours"
+        android:layout_width="415dp"
+        android:layout_height="660dp"
+        app:layout_constraintBottom_toTopOf="@id/guideline90"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
 
 
 
-</LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
