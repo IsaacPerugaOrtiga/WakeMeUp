@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".FragmentAlarm">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline90"
@@ -32,27 +33,24 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.6"/>
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentView"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/faButton"
+        android:layout_width="307dp"
+        android:layout_height="59dp"
+        android:contentDescription="Add Alarm"
+        app:layout_constraintTop_toBottomOf="@id/guideline80"
+        app:layout_constraintBottom_toTopOf="@id/guideline90"
+        app:layout_constraintLeft_toLeftOf="@id/guideline40"
+        app:layout_constraintRight_toRightOf="@id/guideline60" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvHours"
+        android:layout_width="415dp"
+        android:layout_height="660dp"
+        app:layout_constraintBottom_toTopOf="@id/guideline90"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/guideline90"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"/>
-
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationView"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@id/guideline90"
-        app:menu="@menu/bottom_nav"
-        app:itemTextColor="@color/selector_color_btn_nav_view"
-        app:itemIconTint="@color/selector_color_btn_nav_view"/>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

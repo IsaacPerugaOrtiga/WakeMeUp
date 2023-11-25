@@ -2,5 +2,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id = "@+id/alarm"
         android:title="Alarm"
+        android:icon="@drawable/alarm_snooze_svgrepo_com"
+        android:enabled="true"/>
+
+    <item android:id="@+id/timekeeper"
+        android:title="Timekeeper"
+        android:icon="@drawable/stopwatch_svgrepo_com"
         android:enabled="true"/>
 </menu>
