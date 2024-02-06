@@ -8,11 +8,11 @@ plugins {
 apply plugin: "realm-android"
 
 android {
-    namespace 'com.example.wakemeup'
+    namespace 'com.isaacpodev.wakemeup'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.wakemeup"
+        applicationId "com.isaacpodev.wakemeup"
         minSdk 24
         targetSdk 33
         versionCode 1
@@ -55,6 +55,7 @@ dependencies {
     def lottieVersion = "6.1.0"
     def nav_version = "2.5.3"
 
+    implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.core:core-ktx:1.8.0'
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'
     implementation 'androidx.activity:activity-compose:1.5.1'

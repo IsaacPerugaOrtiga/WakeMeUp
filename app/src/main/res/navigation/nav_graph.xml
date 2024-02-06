@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/fragmentStopWatch">
+    <fragment
+        android:id="@+id/fragmentStopWatch"
+        android:name="com.isaacpodev.wakemeup.ui.fragments.FragmentStopWatch"
+        android:label="fragment_stop_watch"
+        tools:layout="@layout/fragment_stop_watch" />
+    <fragment
+        android:id="@+id/fragmentAlarm"
+        android:name="com.isaacpodev.wakemeup.ui.fragments.FragmentAlarm"
+        android:label="fragment_alarm"
+        tools:layout="@layout/fragment_alarm" />
+</navigation>

@@ -1,4 +1,4 @@
-package com.example.wakemeup
+package com.isaacpodev.wakemeup
 
 import org.junit.Test
 
