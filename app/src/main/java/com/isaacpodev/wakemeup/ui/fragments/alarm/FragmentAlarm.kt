@@ -1,4 +1,4 @@
-package com.isaacpodev.wakemeup.ui.fragments
+package com.isaacpodev.wakemeup.ui.fragments.alarm
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.isaacpodev.wakemeup.R
+import com.isaacpodev.wakemeup.databinding.FragmentAlarmBinding
 
 /**
  * A simple [Fragment] subclass.
@@ -16,10 +17,11 @@ import com.isaacpodev.wakemeup.R
 class FragmentAlarm : Fragment() {
 
     private lateinit var fabButton: FloatingActionButton
+    private lateinit var binding: FragmentAlarmBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        binding.faButton
     }
 
     override fun onCreateView(

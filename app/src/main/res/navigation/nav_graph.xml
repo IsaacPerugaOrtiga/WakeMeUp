@@ -6,12 +6,12 @@
     app:startDestination="@id/fragmentStopWatch">
     <fragment
         android:id="@+id/fragmentStopWatch"
-        android:name="com.isaacpodev.wakemeup.ui.fragments.FragmentStopWatch"
+        android:name="com.isaacpodev.wakemeup.ui.fragments.stopwatch.FragmentStopWatch"
         android:label="fragment_stop_watch"
         tools:layout="@layout/fragment_stop_watch" />
     <fragment
         android:id="@+id/fragmentAlarm"
-        android:name="com.isaacpodev.wakemeup.ui.fragments.FragmentAlarm"
+        android:name="com.isaacpodev.wakemeup.ui.fragments.alarm.FragmentAlarm"
         android:label="fragment_alarm"
         tools:layout="@layout/fragment_alarm" />
 </navigation>

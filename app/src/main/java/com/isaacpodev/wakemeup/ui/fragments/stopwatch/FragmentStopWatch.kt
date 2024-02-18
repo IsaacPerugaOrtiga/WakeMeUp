@@ -1,4 +1,4 @@
-package com.isaacpodev.wakemeup.ui.fragments
+package com.isaacpodev.wakemeup.ui.fragments.stopwatch
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,9 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.isaacpodev.wakemeup.R
+import com.isaacpodev.wakemeup.databinding.FragmentAlarmBinding
+import com.isaacpodev.wakemeup.databinding.FragmentStopWatchBinding
 
 class FragmentStopWatch : Fragment() {
 
+    private lateinit var binding: FragmentStopWatchBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
