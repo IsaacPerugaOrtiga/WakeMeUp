@@ -5,10 +5,10 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.isaacpodev.models.Alarm
 import com.isaacpodev.wakemeup.databinding.HourItemBinding
 
-class ViewHolderAlarm(itemView: View,listener: onItemClickListener) : ViewHolder(itemView) {
+class ViewHolderAlarm(itemView: View) : ViewHolder(itemView) {
 
     private val binding = HourItemBinding.bind(itemView)
-    private lateinit var mlistener: onItemClickListener
+    private lateinit var mlistener: OnItemClickListener
     fun render(alarm: Alarm,onItemSelected: (Alarm) -> Unit){
         binding.tvHour.text = alarm.alarm
         binding.tvDay.text = alarm.days.toString()
@@ -21,10 +21,10 @@ class ViewHolderAlarm(itemView: View,listener: onItemClickListener) : ViewHolder
 
     }
 
-    fun setOnItemClickListener(listener:onItemClickListener){
+    fun setOnItemClickListener(listener:OnItemClickListener){
         mlistener = listener
     }
-   interface onItemClickListener{
+   interface OnItemClickListener{
        fun onItemClick(position:Int)
    }
 

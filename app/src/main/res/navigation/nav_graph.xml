@@ -13,5 +13,13 @@
         android:id="@+id/fragmentAlarm"
         android:name="com.isaacpodev.wakemeup.ui.fragments.alarm.FragmentAlarm"
         android:label="fragment_alarm"
-        tools:layout="@layout/fragment_alarm" />
+        tools:layout="@layout/fragment_alarm" >
+        <action
+            android:id="@+id/action_fragmentAlarm_to_hourActivity"
+            app:destination="@id/hourActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/hourActivity"
+        android:name="com.isaacpodev.wakemeup.ui.fragments.alarm.HourActivity"
+        android:label="HourActivity" />
 </navigation>

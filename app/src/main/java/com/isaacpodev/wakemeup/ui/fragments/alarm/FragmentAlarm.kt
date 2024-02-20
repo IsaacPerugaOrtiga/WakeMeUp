@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.isaacpodev.wakemeup.R
 import com.isaacpodev.wakemeup.databinding.FragmentAlarmBinding
@@ -21,7 +22,13 @@ class FragmentAlarm : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding.faButton
+
+    }
+
+    private fun initListeners(){
+        binding.faButton.setOnClickListener(View.OnClickListener {
+            it.findNavController().navigate(R.id.action_fragmentAlarm_to_hourActivity)
+        })
     }
 
     override fun onCreateView(
@@ -29,12 +36,15 @@ class FragmentAlarm : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_alarm, container, false)
+        binding = FragmentAlarmBinding.inflate(inflater, container, false)
+        initListeners()
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        fabButton  = view.findViewById(R.id.faButton)
+
+
     }
 
 }

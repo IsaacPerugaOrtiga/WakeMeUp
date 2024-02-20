@@ -37,7 +37,9 @@
         android:id="@+id/faButton"
         android:layout_width="307dp"
         android:layout_height="59dp"
-        android:contentDescription="Add Alarm"
+        android:backgroundTint="@color/violet"
+        android:src="@drawable/plus_fab"
+        android:contentDescription="@string/add_alarm"
         app:layout_constraintTop_toBottomOf="@id/guideline80"
         app:layout_constraintBottom_toTopOf="@id/guideline90"
         app:layout_constraintLeft_toLeftOf="@id/guideline40"
@@ -48,6 +50,7 @@
         android:id="@+id/rvHours"
         android:layout_width="415dp"
         android:layout_height="660dp"
+
         app:layout_constraintBottom_toTopOf="@id/guideline90"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
