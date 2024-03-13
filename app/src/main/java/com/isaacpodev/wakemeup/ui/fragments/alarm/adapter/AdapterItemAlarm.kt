@@ -3,7 +3,7 @@ package com.isaacpodev.wakemeup.ui.fragments.alarm.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.isaacpodev.models.Alarm
+import com.isaacpodev.wakemeup.models.Alarm
 import com.isaacpodev.wakemeup.R
 
 class AdapterItemAlarm(private val alarmList: ArrayList<Alarm>,

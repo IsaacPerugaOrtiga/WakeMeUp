@@ -21,5 +21,6 @@
     <activity
         android:id="@+id/hourActivity"
         android:name="com.isaacpodev.wakemeup.ui.fragments.alarm.HourActivity"
-        android:label="HourActivity" />
+        android:label="HourActivity"
+        tools:layout="@layout/hour_window"/>
 </navigation>

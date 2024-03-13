@@ -6,9 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.isaacpodev.wakemeup.models.Alarm
 import com.isaacpodev.wakemeup.R
 import com.isaacpodev.wakemeup.databinding.FragmentAlarmBinding
+import com.isaacpodev.wakemeup.ui.fragments.alarm.adapter.AdapterItemAlarm
+import com.isaacpodev.wakemeup.utils.Const
 
 /**
  * A simple [Fragment] subclass.
@@ -17,8 +22,9 @@ import com.isaacpodev.wakemeup.databinding.FragmentAlarmBinding
  */
 class FragmentAlarm : Fragment() {
 
-    private lateinit var fabButton: FloatingActionButton
+    private var listAlarms : ArrayList<Alarm> = ArrayList<Alarm>()
     private lateinit var binding: FragmentAlarmBinding
+    private lateinit var alarm: Alarm
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,8 +49,22 @@ class FragmentAlarm : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initUI()
 
+    }
 
+    private fun initUI() {
+        val adapterAlarm = AdapterItemAlarm(listAlarms){
+            Const().checkedAlarm = it.isActivate
+            Const().hour = it.alarm
+            Const().days = it.days
+            findNavController().navigate(R.id.action_fragmentAlarm_to_hourActivity)
+
+        }
+        binding.rvHours.apply {
+            layoutManager = LinearLayoutManager(requireContext())
+            adapter = adapterAlarm
+        }
     }
 
 }
