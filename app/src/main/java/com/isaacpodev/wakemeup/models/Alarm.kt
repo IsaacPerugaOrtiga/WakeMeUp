@@ -8,9 +8,9 @@ import org.mongodb.kbson.ObjectId
 class Alarm(): RealmObject {
     @PrimaryKey
     var _id : ObjectId = ObjectId()
-    val alarm: String = ""
-    val days: ArrayList<String> = ArrayList()
-    val isActivate: Boolean = false
+    var alarm: String = ""
+    //var days: ArrayList<String> = ArrayList()
+    var isActivate: Boolean = false
     var owner_id: String = ""
  constructor(ownerId: String = ""): this(){
   owner_id = ownerId

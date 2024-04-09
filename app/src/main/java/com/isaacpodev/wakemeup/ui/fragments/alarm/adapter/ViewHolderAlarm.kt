@@ -11,7 +11,7 @@ class ViewHolderAlarm(itemView: View) : ViewHolder(itemView) {
     private lateinit var mlistener: OnItemClickListener
     fun render(alarm: Alarm, onItemSelected: (Alarm) -> Unit){
         binding.tvHour.text = alarm.alarm
-        binding.tvDay.text = alarm.days.toString()
+        //binding.tvDay.text = alarm.days.toString()
         binding.swActivateAlarm.isChecked = alarm.isActivate
 
         //TODO() MIRAR SI ESTARA BIEN

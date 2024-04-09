@@ -1,4 +1,4 @@
 package com.isaacpodev.wakemeup.utils
 
-data class Const(var checkedAlarm: Boolean = false, var days: ArrayList<String> = ArrayList(), var hour: String = "") {
+data class Const(var checkedAlarm: Boolean = false, var days: List<String> = ArrayList(), var hour: String = "") {
 }

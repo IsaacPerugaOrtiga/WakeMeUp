@@ -57,7 +57,7 @@ class FragmentAlarm : Fragment() {
         val adapterAlarm = AdapterItemAlarm(listAlarms){
             Const().checkedAlarm = it.isActivate
             Const().hour = it.alarm
-            Const().days = it.days
+            //Const().days = it.days
             findNavController().navigate(R.id.action_fragmentAlarm_to_hourActivity)
 
         }
