@@ -9,7 +9,7 @@ class Alarm(): RealmObject {
     @PrimaryKey
     var _id : ObjectId = ObjectId()
     var alarm: String = ""
-    //var days: ArrayList<String> = ArrayList()
+    var days: String = ""
     var isActivate: Boolean = false
     var owner_id: String = ""
  constructor(ownerId: String = ""): this(){
