@@ -1,14 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.isaacpodev.wakemeup.ui.fragments.stopwatch.FragmentStopWatch">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLine30"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.3"/>
 
-</FrameLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLine70"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.70"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLine10"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.10"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLine35"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.35"/>
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLine65"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.65"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLine80"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.80"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLine50"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.50"/>
+
+    c<Chronometer
+    android:id="@+id/chronometer"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:textSize="40sp"
+    android:textAlignment="center"
+    android:gravity="center"
+    app:layout_constraintTop_toBottomOf="@id/guideLine10"
+    app:layout_constraintBottom_toTopOf="@id/guideLine35"
+    app:layout_constraintStart_toStartOf="@id/guideLine30"
+    app:layout_constraintEnd_toStartOf="@id/guideLine70"/>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/faButtonStop"
+        android:layout_width="307dp"
+        android:layout_height="59dp"
+        android:backgroundTint="@color/violet"
+        android:src="@drawable/start_button"
+        android:contentDescription="@string/stop_alarm"
+        app:layout_constraintTop_toBottomOf="@id/guideLine65"
+        app:layout_constraintEnd_toStartOf="@id/guideLine50"
+        app:layout_constraintBottom_toTopOf="@id/guideLine80"
+        app:layout_constraintStart_toEndOf="@id/guideLine30"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/faButtonStart"
+        android:layout_width="307dp"
+        android:layout_height="59dp"
+        android:backgroundTint="@color/violet"
+        android:visibility="gone"
+        android:src="@drawable/stop_button"
+        android:contentDescription="@string/start_alarm"
+        app:layout_constraintTop_toBottomOf="@id/guideLine65"
+        app:layout_constraintStart_toEndOf="@id/guideLine50"
+        app:layout_constraintBottom_toTopOf="@id/guideLine80"
+        app:layout_constraintEnd_toStartOf="@id/guideLine70"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

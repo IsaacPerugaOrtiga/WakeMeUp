@@ -39,6 +39,10 @@ class FragmentHour : Fragment(){
         binding.imgBack.setOnClickListener{
             it.findNavController().popBackStack()
         }
+
+        binding.imgSave.setOnClickListener{
+            //GUARDAR TODOS LOS PARAMETROS DE LA ALARMA Y GUARDARLA EN LA BASE DE DATOS
+        }
     }
 
     private fun initUI() {

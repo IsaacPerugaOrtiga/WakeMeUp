@@ -26,6 +26,13 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.2"/>
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline80"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.8"/>
+
     <Toolbar
         android:id="@+id/tbHourWindow"
         android:layout_width="0dp"
@@ -36,7 +43,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/timePicker"/>
 
-    <ImageButton
+    <ImageView
         android:id="@+id/imgBack"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -45,6 +52,17 @@
         app:layout_constraintBottom_toTopOf="@id/guideLine10"
         app:layout_constraintEnd_toStartOf="@id/guideline20"
         app:layout_constraintStart_toStartOf="@+id/tbHourWindow"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgSave"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:backgroundTint="@color/black"
+        android:src="@drawable/tick_img"
+        app:layout_constraintBottom_toTopOf="@id/guideLine10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/guideline80"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TimePicker
