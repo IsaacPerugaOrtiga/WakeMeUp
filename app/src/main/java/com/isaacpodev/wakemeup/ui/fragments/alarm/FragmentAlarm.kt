@@ -33,7 +33,7 @@ class FragmentAlarm : Fragment() {
 
     private fun initListeners(){
         binding.faButton.setOnClickListener(View.OnClickListener {
-            it.findNavController().navigate(R.id.action_fragmentAlarm_to_hourActivity)
+            it.findNavController().navigate(R.id.action_fragmentAlarm_to_fragmentHour)
         })
     }
 
@@ -58,7 +58,7 @@ class FragmentAlarm : Fragment() {
             Const().checkedAlarm = it.isActivate
             Const().hour = it.alarm
             //Const().days = it.days
-            findNavController().navigate(R.id.action_fragmentAlarm_to_hourActivity)
+            findNavController().navigate(R.id.action_fragmentAlarm_to_fragmentHour)
 
         }
         binding.rvHours.apply {
