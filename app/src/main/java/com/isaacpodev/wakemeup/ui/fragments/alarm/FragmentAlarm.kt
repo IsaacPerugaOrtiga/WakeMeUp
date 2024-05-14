@@ -26,11 +26,6 @@ class FragmentAlarm : Fragment() {
     private lateinit var binding: FragmentAlarmBinding
     private lateinit var alarm: Alarm
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
-
     private fun initListeners(){
         binding.faButton.setOnClickListener(View.OnClickListener {
             it.findNavController().navigate(R.id.action_fragmentAlarm_to_fragmentHour)
@@ -43,13 +38,14 @@ class FragmentAlarm : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentAlarmBinding.inflate(inflater, container, false)
-        initListeners()
+
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initUI()
+        initListeners()
 
     }
 

@@ -57,7 +57,7 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.50"/>
 
-    c<Chronometer
+    <Chronometer
     android:id="@+id/chronometer"
     android:layout_width="0dp"
     android:layout_height="0dp"
@@ -71,7 +71,7 @@
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/faButtonStop"
+        android:id="@+id/faButtonStart"
         android:layout_width="307dp"
         android:layout_height="59dp"
         android:backgroundTint="@color/violet"
@@ -83,7 +83,7 @@
         app:layout_constraintStart_toEndOf="@id/guideLine30"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/faButtonStart"
+        android:id="@+id/faButtonStop"
         android:layout_width="307dp"
         android:layout_height="59dp"
         android:backgroundTint="@color/violet"
