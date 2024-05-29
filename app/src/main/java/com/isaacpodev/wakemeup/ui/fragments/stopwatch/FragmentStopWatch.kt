@@ -1,6 +1,7 @@
 package com.isaacpodev.wakemeup.ui.fragments.stopwatch
 
 import android.os.Bundle
+import android.os.SystemClock
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,7 +15,7 @@ import com.isaacpodev.wakemeup.databinding.FragmentStopWatchBinding
 class FragmentStopWatch : Fragment() {
 
     private lateinit var binding: FragmentStopWatchBinding
-
+    private var timeLast: Long = 0
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -30,21 +31,42 @@ class FragmentStopWatch : Fragment() {
     }
 
     private fun initListeners() {
-        binding.faButtonStart.setOnClickListener{
-            binding.faButtonStart.setImageDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.pause_button))
+
+        binding.btnStart.setOnClickListener{
             binding.chronometer.start()
-            binding.faButtonStop.visibility = View.VISIBLE
-
+            binding.btnStart.visibility = View.INVISIBLE
+            binding.btnRestart.visibility = View.VISIBLE
+            binding.btnStop.visibility = View.VISIBLE
         }
 
-        binding.faButtonStop.setOnClickListener { binding.chronometer.stop()
-            binding.chronometer.text = "00:00"
+        binding.btnRestart.setOnClickListener{
+            timeLast = binding.chronometer.base
             binding.chronometer.stop()
+            binding.btnRestart.visibility = View.INVISIBLE
+            binding.btnStartPause.visibility = View.VISIBLE
+
         }
+
+        binding.btnStop.setOnClickListener{
+            binding.chronometer.base = SystemClock.elapsedRealtime()
+            binding.chronometer.stop()
+            binding.btnStop.visibility = View.INVISIBLE
+            binding.btnRestart.visibility = View.INVISIBLE
+            binding.btnStartPause.visibility = View.INVISIBLE
+            binding.btnStart.visibility = View.VISIBLE
+        }
+
+        binding.btnStartPause.setOnClickListener{
+            binding.chronometer.base = timeLast
+            binding.btnStartPause.visibility = View.INVISIBLE
+            binding.btnRestart.visibility = View.VISIBLE
+
+        }
+
     }
 
     private fun initUI() {
-
+        binding.chronometer.base = SystemClock.elapsedRealtime()
     }
 
 

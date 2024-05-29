@@ -44,6 +44,13 @@
         app:layout_constraintGuide_percent="0.65"/>
 
     <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLine70h"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.70"/>
+
+    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideLine80"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -69,28 +76,55 @@
     app:layout_constraintStart_toStartOf="@id/guideLine30"
     app:layout_constraintEnd_toStartOf="@id/guideLine70"/>
 
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/faButtonStart"
-        android:layout_width="307dp"
-        android:layout_height="59dp"
-        android:backgroundTint="@color/violet"
+    <ImageButton
+        android:id="@+id/btnStart"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:foregroundGravity="center"
+        android:background="@drawable/button_style"
         android:src="@drawable/start_button"
-        android:contentDescription="@string/stop_alarm"
-        app:layout_constraintTop_toBottomOf="@id/guideLine65"
+        android:contentDescription="@string/start_alarm"
+        app:layout_constraintTop_toBottomOf="@id/guideLine70h"
+        app:layout_constraintEnd_toStartOf="@id/guideLine70"
+        app:layout_constraintBottom_toTopOf="@id/guideLine80"
+        app:layout_constraintStart_toEndOf="@id/guideLine30" />
+
+    <ImageButton
+        android:id="@+id/btnStartPause"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/button_style"
+        android:src="@drawable/start_button"
+        android:visibility="gone"
+        android:contentDescription="@string/start_alarm"
+        app:layout_constraintTop_toBottomOf="@id/guideLine70h"
         app:layout_constraintEnd_toStartOf="@id/guideLine50"
         app:layout_constraintBottom_toTopOf="@id/guideLine80"
         app:layout_constraintStart_toEndOf="@id/guideLine30"/>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/faButtonStop"
-        android:layout_width="307dp"
-        android:layout_height="59dp"
-        android:backgroundTint="@color/violet"
+
+    <ImageButton
+        android:id="@+id/btnRestart"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/button_style"
+        android:src="@drawable/pause_button"
+        android:visibility="gone"
+        android:contentDescription="@string/start_alarm"
+        app:layout_constraintTop_toBottomOf="@id/guideLine70h"
+        app:layout_constraintEnd_toStartOf="@id/guideLine50"
+        app:layout_constraintBottom_toTopOf="@id/guideLine80"
+        app:layout_constraintStart_toEndOf="@id/guideLine30"/>
+
+    <ImageButton
+        android:id="@+id/btnStop"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/button_style"
         android:visibility="gone"
         android:src="@drawable/stop_button"
-        android:contentDescription="@string/start_alarm"
-        app:layout_constraintTop_toBottomOf="@id/guideLine65"
+        android:contentDescription="@string/stop_alarm"
+        app:layout_constraintTop_toBottomOf="@id/guideLine70h"
         app:layout_constraintStart_toEndOf="@id/guideLine50"
         app:layout_constraintBottom_toTopOf="@id/guideLine80"
         app:layout_constraintEnd_toStartOf="@id/guideLine70"/>
