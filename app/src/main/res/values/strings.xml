@@ -7,4 +7,10 @@
     <string name="alarm_string">Alarm</string>
     <string name="stop_alarm">Stop alarm</string>
     <string name="start_alarm">Start alarm</string>
+    <string name="no_activated">No activated</string>
+    <string name="activated">Activated</string>
+    <string name="vibrate_text">Vibrar cuando suene la alarma</string>
+    <string name="delete_text">Eliminar cuando suene la alarma</string>
+    <string name="tone_text">Tono de llamada</string>
+    <string name="repeat_text">Repetir</string>
 </resources>
