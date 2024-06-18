@@ -15,14 +15,10 @@ import com.isaacpodev.wakemeup.databinding.FragmentStopWatchBinding
 class FragmentStopWatch : Fragment() {
 
     private lateinit var binding: FragmentStopWatchBinding
-    private var timeLast: Long = 0
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        binding = FragmentStopWatchBinding.inflate(inflater, container, false)
-        return binding.root
-    }
+    private var isPaused: Boolean = false
+    private var pauseOffset: Long = 0
+
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -31,43 +27,49 @@ class FragmentStopWatch : Fragment() {
     }
 
     private fun initListeners() {
-
         binding.btnStart.setOnClickListener{
+            binding.chronometer.base = SystemClock.elapsedRealtime() - pauseOffset
             binding.chronometer.start()
             binding.btnStart.visibility = View.INVISIBLE
-            binding.btnRestart.visibility = View.VISIBLE
-            binding.btnStop.visibility = View.VISIBLE
-        }
-
-        binding.btnRestart.setOnClickListener{
-            timeLast = binding.chronometer.base
-            binding.chronometer.stop()
-            binding.btnRestart.visibility = View.INVISIBLE
             binding.btnStartPause.visibility = View.VISIBLE
-
+            binding.btnStop.visibility = View.VISIBLE
+            isPaused = false
         }
 
         binding.btnStop.setOnClickListener{
             binding.chronometer.base = SystemClock.elapsedRealtime()
+            pauseOffset = 0
             binding.chronometer.stop()
             binding.btnStop.visibility = View.INVISIBLE
-            binding.btnRestart.visibility = View.INVISIBLE
             binding.btnStartPause.visibility = View.INVISIBLE
             binding.btnStart.visibility = View.VISIBLE
+            isPaused = false
         }
 
         binding.btnStartPause.setOnClickListener{
-            binding.chronometer.base = timeLast
-            binding.btnStartPause.visibility = View.INVISIBLE
-            binding.btnRestart.visibility = View.VISIBLE
-
+            if (isPaused) {
+                binding.btnStartPause.setImageResource(R.drawable.pause_button)
+                binding.chronometer.base = SystemClock.elapsedRealtime() - pauseOffset
+                binding.chronometer.start()
+                isPaused = false
+            } else {
+                binding.btnStartPause.setImageResource(R.drawable.start_button)
+                pauseOffset = SystemClock.elapsedRealtime() - binding.chronometer.base
+                binding.chronometer.stop()
+                isPaused = true
+            }
         }
-
     }
 
     private fun initUI() {
         binding.chronometer.base = SystemClock.elapsedRealtime()
     }
 
-
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        binding = FragmentStopWatchBinding.inflate(inflater, container, false)
+        return binding.root
+    }
 }
