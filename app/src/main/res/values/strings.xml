@@ -13,4 +13,5 @@
     <string name="delete_text">Eliminar cuando suene la alarma</string>
     <string name="tone_text">Tono de llamada</string>
     <string name="repeat_text">Repetir</string>
+    <string name="tag_title">Etiqeuta:</string>
 </resources>

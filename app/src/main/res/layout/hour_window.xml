@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/hourActivity">
 
     <androidx.constraintlayout.widget.Guideline
@@ -60,6 +61,13 @@
         android:layout_height="0dp"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.5"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline75"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.75"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline80"
@@ -143,7 +151,7 @@
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@id/guideline50"
         app:layout_constraintBottom_toTopOf="@id/guideline60"
-        app:layout_constraintEnd_toStartOf="@id/guideline50v"
+        app:layout_constraintEnd_toStartOf="@id/guideline75"
         app:layout_constraintStart_toStartOf="parent"/>
 
     <TextView
@@ -155,8 +163,46 @@
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@id/guideline60"
         app:layout_constraintBottom_toTopOf="@id/guideline70"
-        app:layout_constraintEnd_toStartOf="@id/guideline50v"
+        app:layout_constraintEnd_toStartOf="@id/guideline75"
         app:layout_constraintStart_toStartOf="parent"/>
+
+    <Switch
+        android:id="@+id/swVibrate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/guideline60"
+        app:layout_constraintStart_toEndOf="@id/guideline80"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline50"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <Switch
+        android:id="@+id/swDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/guideline70"
+        app:layout_constraintStart_toEndOf="@id/guideline80"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline60"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:hint="@string/tag_title"
+        app:layout_constraintTop_toBottomOf="@id/guideline70"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toBottomOf="@id/guideline70"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
 
 
 
