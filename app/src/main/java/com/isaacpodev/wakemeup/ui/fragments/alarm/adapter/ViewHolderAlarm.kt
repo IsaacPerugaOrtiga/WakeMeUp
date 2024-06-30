@@ -14,7 +14,6 @@ class ViewHolderAlarm(itemView: View) : ViewHolder(itemView) {
         binding.tvDay.text = alarm.days.toString()
         binding.swActivateAlarm.isChecked = alarm.isActivate
 
-        //TODO() MIRAR SI ESTARA BIEN
         itemView.setOnClickListener{
             mlistener.onItemClick(adapterPosition)
         }

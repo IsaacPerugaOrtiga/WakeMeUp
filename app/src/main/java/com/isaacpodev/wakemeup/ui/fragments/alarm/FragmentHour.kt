@@ -6,12 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import com.isaacpodev.wakemeup.database.Database
 import com.isaacpodev.wakemeup.databinding.FragmentAlarmBinding
 import com.isaacpodev.wakemeup.databinding.HourWindowBinding
 
 class FragmentHour : Fragment(){
 
     private lateinit var binding: HourWindowBinding
+    val db = Database
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,6 +48,7 @@ class FragmentHour : Fragment(){
     }
 
     private fun initUI() {
+
 
     }
 
