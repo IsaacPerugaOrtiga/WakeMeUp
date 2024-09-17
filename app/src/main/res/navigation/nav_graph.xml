@@ -22,6 +22,14 @@
         android:id="@+id/fragmentHour"
         android:name="com.isaacpodev.wakemeup.ui.fragments.alarm.FragmentHour"
         android:label="FragmentHour"
-        tools:layout="@layout/hour_window"/>
+        tools:layout="@layout/hour_window">
+        <action
+            android:id="@+id/action_fragmentHour_to_fragmentDaysRepeatAlarm"
+            app:destination="@id/fragmentDaysRepeatAlarm" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentDaysRepeatAlarm"
+        android:name="com.isaacpodev.wakemeup.ui.fragments.alarm.FragmentDaysRepeatAlarm"
+        android:label="FragmentDaysRepeatAlarm" />
 
 </navigation>

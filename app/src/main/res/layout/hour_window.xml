@@ -123,6 +123,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:text="@string/tone_text"
+        android:gravity="center"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@id/guideline30"
@@ -135,6 +136,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:text="@string/repeat_text"
+        android:gravity="center"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@id/guideline40"
@@ -142,6 +144,15 @@
         app:layout_constraintEnd_toStartOf="@id/guideline50v"
         app:layout_constraintStart_toStartOf="parent" />
 
+
+    <TextView
+        android:id="@+id/tvDays"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/guideline50"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/guideline80"
+        app:layout_constraintTop_toTopOf="@+id/guideline40" />
     <TextView
         android:id="@+id/tvVibrate"
         android:layout_width="0dp"
@@ -149,6 +160,7 @@
         android:text="@string/vibrate_text"
         android:textSize="16sp"
         android:textStyle="bold"
+        android:gravity="center"
         app:layout_constraintTop_toBottomOf="@id/guideline50"
         app:layout_constraintBottom_toTopOf="@id/guideline60"
         app:layout_constraintEnd_toStartOf="@id/guideline75"
@@ -159,6 +171,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:text="@string/delete_text"
+        android:gravity="center"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@id/guideline60"
