@@ -56,6 +56,7 @@
         app:layout_constraintBottom_toTopOf="@id/guideLine20">
 
         <TextView
+            android:id="@+id/tvDay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
