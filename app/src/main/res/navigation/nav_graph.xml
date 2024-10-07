@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_graph"
-    app:startDestination="@id/fragmentStopWatch">
+    app:startDestination="@id/fragmentAlarm">
     <fragment
         android:id="@+id/fragmentStopWatch"
         android:name="com.isaacpodev.wakemeup.ui.fragments.stopwatch.FragmentStopWatch"

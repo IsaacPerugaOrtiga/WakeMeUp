@@ -50,10 +50,12 @@ class FragmentDaysRepeatAlarm : Fragment() {
         listDays.add("Lunes a Vierens")
         listDays.add("Sabado a Domingo")
         listDays.add("Personalizado")
+
         adapterDaysRepeat = AdapterItemDaysRepeatAlarm(listDays, onItemSelected = {
 
         })
         binding.rvDaysRepeat.adapter = adapterDaysRepeat
+
 
         binding.rvDaysRepeat.apply {
             layoutManager = LinearLayoutManager(context)

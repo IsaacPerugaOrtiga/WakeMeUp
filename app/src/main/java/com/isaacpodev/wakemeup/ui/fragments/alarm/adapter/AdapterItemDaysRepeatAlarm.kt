@@ -9,11 +9,11 @@ class AdapterItemDaysRepeatAlarm(private val days: List<String>,
                                  private val onItemSelected: (String) -> Unit): RecyclerView.Adapter<ViewHolderDaysRepeatAlarm>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderDaysRepeatAlarm {
         return ViewHolderDaysRepeatAlarm( LayoutInflater.from(parent.context)
-            .inflate(R.layout.day_item,null))
+            .inflate(R.layout.day_item,parent,false))
     }
 
     override fun getItemCount(): Int {
-        return days.count()
+        return days.size
     }
 
     override fun onBindViewHolder(holder: ViewHolderDaysRepeatAlarm, position: Int) {
