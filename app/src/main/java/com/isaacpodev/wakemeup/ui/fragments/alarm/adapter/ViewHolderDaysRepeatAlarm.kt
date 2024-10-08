@@ -9,8 +9,13 @@ import com.isaacpodev.wakemeup.ui.fragments.alarm.adapter.ViewHolderAlarm.OnItem
 class ViewHolderDaysRepeatAlarm(itemView: View) : ViewHolder(itemView) {
     private val binding = DayItemBinding.bind(itemView)
     private lateinit var mlistener: OnItemClickListener
-    fun render(days: String,onItemSelected: (String) -> Unit){
-        binding.tvDay.text = days
+    fun render(days: List<String>,onItemSelected: (String) -> Unit){
+        if(days.size > 1){
+            binding.tvDay.text = "${days.first()} a ${days.last()}"
+        }else{
+            binding.tvDay.text = "${days.first()}"
+        }
+
 
         itemView.setOnClickListener{
             mlistener.onItemClick(adapterPosition)

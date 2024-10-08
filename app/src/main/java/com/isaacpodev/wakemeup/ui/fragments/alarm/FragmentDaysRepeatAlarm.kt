@@ -6,17 +6,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView.LayoutManager
 import com.isaacpodev.wakemeup.databinding.FragmentDaysRepeatAlarmBinding
+import com.isaacpodev.wakemeup.models.Day
 import com.isaacpodev.wakemeup.ui.fragments.alarm.adapter.AdapterItemDaysRepeatAlarm
 
 class FragmentDaysRepeatAlarm : Fragment() {
 
     private lateinit var binding : FragmentDaysRepeatAlarmBinding
     private lateinit var  adapterDaysRepeat: AdapterItemDaysRepeatAlarm
-    private var  listDays : ArrayList<String> = ArrayList<String>()
+    private var  listDays : ArrayList<Day> = ArrayList<Day>()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -47,9 +46,15 @@ class FragmentDaysRepeatAlarm : Fragment() {
     }
 
     private fun initList() {
-        listDays.add("Lunes a Vierens")
-        listDays.add("Sabado a Domingo")
-        listDays.add("Personalizado")
+        initRecyclerView()
+
+
+    }
+
+    private fun initRecyclerView() {
+        listDays.add(Day(daysList = listOf("Lunes", "Martes")))
+        listDays.add(Day(daysList = listOf("Sabado", "Domingo")))
+        listDays.add(Day(daysList = listOf("Personalizado")))
 
         adapterDaysRepeat = AdapterItemDaysRepeatAlarm(listDays, onItemSelected = {
 

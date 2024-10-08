@@ -10,7 +10,7 @@ object Database {
     val config = RealmConfiguration.create(schema = setOf(Alarm::class))
     val realm = Realm.open(config)
 
-    suspend fun writeAlarm(alarmUser: String,daysUser: RealmList<String>,isActivateUser: Boolean){
+    suspend fun writeAlarm(alarmUser: String, daysUser: RealmList<String>, isActivateUser: Boolean){
         realm.write {
             val objectAlarm = Alarm().apply {
                 alarm = alarmUser

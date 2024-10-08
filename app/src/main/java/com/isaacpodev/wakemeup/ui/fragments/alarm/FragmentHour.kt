@@ -1,19 +1,19 @@
 package com.isaacpodev.wakemeup.ui.fragments.alarm
 
-import android.app.Dialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.Window
-import android.widget.Button
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.isaacpodev.wakemeup.R
 import com.isaacpodev.wakemeup.database.Database
-import com.isaacpodev.wakemeup.databinding.FragmentAlarmBinding
 import com.isaacpodev.wakemeup.databinding.HourWindowBinding
+import io.realm.kotlin.ext.realmListOf
+import io.realm.kotlin.types.RealmList
+import kotlinx.coroutines.DelicateCoroutinesApi
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class FragmentHour : Fragment(){
 
@@ -42,13 +42,22 @@ class FragmentHour : Fragment(){
 
     }
 
+    @OptIn(DelicateCoroutinesApi::class)
     private fun initListeners() {
         binding.imgBack.setOnClickListener{
             it.findNavController().popBackStack()
         }
 
         binding.imgSave.setOnClickListener{
-            //GUARDAR TODOS LOS PARAMETROS DE LA ALARMA Y GUARDARLA EN LA BASE DE DATOS
+            val daysUser: RealmList<String> = realmListOf()
+            daysUser.add("Lunes")
+            GlobalScope.launch {
+                db.writeAlarm(
+                    alarmUser = binding.timePicker.toString(),
+                    daysUser = daysUser,
+                    isActivateUser = true
+                )
+            }
         }
 
         binding.tvDays.setOnClickListener{
@@ -57,7 +66,7 @@ class FragmentHour : Fragment(){
     }
 
     private fun initUI() {
-        binding.tvDays.text = "hola"
+        binding.tvDays.text = ""
 
     }
 

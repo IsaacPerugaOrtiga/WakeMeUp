@@ -4,8 +4,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.isaacpodev.wakemeup.R
+import com.isaacpodev.wakemeup.models.Day
 
-class AdapterItemDaysRepeatAlarm(private val days: List<String>,
+class AdapterItemDaysRepeatAlarm(private val days: List<Day>,
                                  private val onItemSelected: (String) -> Unit): RecyclerView.Adapter<ViewHolderDaysRepeatAlarm>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderDaysRepeatAlarm {
         return ViewHolderDaysRepeatAlarm( LayoutInflater.from(parent.context)
@@ -17,7 +18,7 @@ class AdapterItemDaysRepeatAlarm(private val days: List<String>,
     }
 
     override fun onBindViewHolder(holder: ViewHolderDaysRepeatAlarm, position: Int) {
-        holder.render(days[position],onItemSelected)
+        holder.render(days[position].daysList,onItemSelected)
     }
 
 }
